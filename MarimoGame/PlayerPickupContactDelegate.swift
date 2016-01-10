@@ -31,6 +31,11 @@ class PlayerPickupContactDelegate: NSObject, SKPhysicsContactDelegate {
         }
         
         pickup.removeFromParent()
-        print("picked up by", (otherType & gCat_PLAYER) != 0 ? "player!" : "non-player!")
+        
+        if (otherType & gCat_PLAYER) != 0 {
+            // picked up by a player character
+            
+            (other as! Player).bubbles += 1
+        }
     }
 }

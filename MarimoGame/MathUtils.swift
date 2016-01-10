@@ -9,6 +9,41 @@
 import Foundation
 
 
+func length(vec: CGVector) -> Double {
+    return sqrt(Double(vec.dx*vec.dx + vec.dy*vec.dy))
+}
+
+func -(left: CGPoint, right: CGPoint) -> CGVector {
+    return CGVectorMake(left.x-right.x, left.y-right.y)
+}
+
+
+
+func +(left: CGVector, right: CGVector) -> CGVector {
+    return CGVectorMake(left.dx + right.dx, left.dy + right.dy)
+}
+func -(left: CGVector, right: CGVector) -> CGVector {
+    return left + (-right)
+}
+prefix func -(vec: CGVector) -> CGVector {
+    return CGVectorMake(-vec.dx, -vec.dy)
+}
+
+func /(left: CGVector, right: Double) -> CGVector {
+    let r = CGFloat(right)
+    return CGVectorMake(left.dx/r, left.dy/r)
+}
+
+func *(left: CGVector, right: Double) -> CGVector {
+    let r = CGFloat(right)
+    return CGVectorMake(left.dx*r, left.dy*r)
+}
+
+func *(left: Double, right: CGVector) -> CGVector {
+    return right * left
+}
+
+
 
 func distance(x: CGPoint, _ y: CGPoint) -> Double {
     let dx = Double(x.x - y.x)

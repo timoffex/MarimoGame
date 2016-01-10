@@ -53,12 +53,12 @@ class ControlsHandler: NSResponder {
         let s = isKeyDown("s")
         let d = isKeyDown("d")
         
-        if w { playerNode.actionMoveUp() }
-        else if s { playerNode.actionMoveDown() }
-        else { playerNode.actionMoveStopVertical() }
+        if w { playerNode.controlVFloat() }
+        else if s { playerNode.controlVSink() }
+        else { playerNode.controlVNone() }
         
-        if a { playerNode.actionMoveLeft() }
-        else if d { playerNode.actionMoveRight() }
-        else { playerNode.actionMoveStopHorizontal() }
+        if a { playerNode.controlRollLeft() }
+        else if d { playerNode.controlRollRight() }
+        else { playerNode.controlRollNone() }
     }
 }

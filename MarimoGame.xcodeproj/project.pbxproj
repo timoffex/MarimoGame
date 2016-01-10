@@ -23,6 +23,8 @@
 		C63400F41C3CFB27008FF185 /* marimos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C63400F31C3CFB27008FF185 /* marimos.atlas */; };
 		C63400F61C3D06E8008FF185 /* Pickup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400F51C3D06E8008FF185 /* Pickup.swift */; };
 		C63400F81C3F0C27008FF185 /* PlayerPickupContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400F71C3F0C27008FF185 /* PlayerPickupContactDelegate.swift */; };
+		C63400FA1C4229AB008FF185 /* Goldfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400F91C4229AB008FF185 /* Goldfish.swift */; };
+		C63400FC1C424851008FF185 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400FB1C424851008FF185 /* Ground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		C63400F31C3CFB27008FF185 /* marimos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = marimos.atlas; sourceTree = "<group>"; };
 		C63400F51C3D06E8008FF185 /* Pickup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pickup.swift; sourceTree = "<group>"; };
 		C63400F71C3F0C27008FF185 /* PlayerPickupContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPickupContactDelegate.swift; sourceTree = "<group>"; };
+		C63400F91C4229AB008FF185 /* Goldfish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goldfish.swift; sourceTree = "<group>"; };
+		C63400FB1C424851008FF185 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				C63400C51C3CF9CC008FF185 /* Info.plist */,
 				C63400F51C3D06E8008FF185 /* Pickup.swift */,
 				C63400F71C3F0C27008FF185 /* PlayerPickupContactDelegate.swift */,
+				C63400F91C4229AB008FF185 /* Goldfish.swift */,
+				C63400FB1C424851008FF185 /* Ground.swift */,
 			);
 			path = MarimoGame;
 			sourceTree = "<group>";
@@ -290,8 +296,10 @@
 				C63400F01C3CFABA008FF185 /* MathUtils.swift in Sources */,
 				C63400F81C3F0C27008FF185 /* PlayerPickupContactDelegate.swift in Sources */,
 				C63400F21C3CFABA008FF185 /* Player.swift in Sources */,
+				C63400FC1C424851008FF185 /* Ground.swift in Sources */,
 				C63400EF1C3CFABA008FF185 /* Globals.swift in Sources */,
 				C63400F61C3D06E8008FF185 /* Pickup.swift in Sources */,
+				C63400FA1C4229AB008FF185 /* Goldfish.swift in Sources */,
 				C63400ED1C3CFABA008FF185 /* Camera.swift in Sources */,
 				C63400F11C3CFABA008FF185 /* Monster.swift in Sources */,
 			);

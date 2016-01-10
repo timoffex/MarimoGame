@@ -26,13 +26,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         controls = ControlsHandler(player: gPlayer!)
         
         layerMiddle = SKNode()
-        layerMiddle.addChild(gPlayer!)
-        
-        testInitMonsters()
-        testInitPickups()
-        
-        
         world = SKNode()
+        
+        
+        
+        
+        layerMiddle.addChild(gPlayer!)  // add player
+        testInitMonsters()              // add monsters (test)
+        testInitPickups()               // add pickups (test)
+        testInitGround()                // add ground (test)
+        
+        
+        // world contains everything
         world.addChild(layerMiddle)
         world.addChild(gCamera!)
         
@@ -43,12 +48,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         contactDelegate = PlayerPickupContactDelegate()
         physicsWorld.contactDelegate = contactDelegate
-        physicsWorld.gravity = CGVector.zero
+        physicsWorld.gravity = CGVectorMake(0, -0.05)
     }
     
     
     private func testInitMonsters() {
-        let m = Monster();
+        let m = Goldfish();
         m.name = "monster"
         m.position = CGPointMake(300, 0)
         layerMiddle.addChild(m)
@@ -68,16 +73,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    private func testInitGround() {
+        let ground = Ground(width: 10000, height: 10)
+        
+        ground.position = CGPointMake(0, -300)
+        world.addChild(ground)
+    }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
         
         
+        // update all nodes marked "monster"
         layerMiddle.enumerateChildNodesWithName("monster") { (c,stopPtr) in
             (c as! Monster).update(currentTime)
         }
         
+        // update player
+        gPlayer?.update(currentTime)
+        
+        // move camera
         gCamera?.update(currentTime)
         centerOnCamera()
         

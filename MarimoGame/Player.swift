@@ -12,13 +12,18 @@ import SpriteKit
 class Player: SKSpriteNode {
     /* Player movement actions */
     
-    var a_up: SKAction = SKAction.repeatActionForever(SKAction.moveByX(0, y: 400, duration: 1))
-    var a_down: SKAction = SKAction.repeatActionForever(SKAction.moveByX(0, y: -400, duration: 1))
-    var a_left: SKAction = SKAction.repeatActionForever(SKAction.moveByX(-400, y: 0, duration: 1))
-    var a_right: SKAction = SKAction.repeatActionForever(SKAction.moveByX(400, y: 0, duration: 1))
+    private enum HorizontalMovement { case NONE, RIGHT, LEFT }
+    private enum VerticalMovement { case NONE, FLOAT, SINK }
+    private var horizontalAction: HorizontalMovement = .NONE
+    private var verticalAction: VerticalMovement = .NONE
+    
+    var maxForceRoll: CGFloat = 100
+    var maxForceFloat: CGFloat = 50
+    var maxForceSink: CGFloat = 80
+    
+    var bubbles: Double = 0
     
     init() {
-        
         let smiling = Textures.marimosAtlas.textureNamed("marimo_smiling")
         
         super.init(texture: smiling, color: NSColor(red: 0, green: 1, blue: 0, alpha: 1), size: CGSize(width: 50, height: 50))
@@ -26,7 +31,8 @@ class Player: SKSpriteNode {
         
         physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
         physicsBody?.categoryBitMask = gCat_PLAYER
-        physicsBody?.affectedByGravity = false
+        physicsBody?.mass = 1
+        physicsBody?.linearDamping = 0.8
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,16 +40,37 @@ class Player: SKSpriteNode {
     }
     
     
-    func actionMoveUp() { runAction(a_up, withKey: "verticalMove") }
-    func actionMoveDown() { runAction(a_down, withKey: "verticalMove") }
-    func actionMoveLeft() { runAction(a_left, withKey: "horizontalMove") }
-    func actionMoveRight() { runAction(a_right, withKey: "horizontalMove") }
     
-    func actionMoveStopVertical() {
-        removeActionForKey("verticalMove")
-    }
+    func controlRollRight() { horizontalAction = .RIGHT }
+    func controlRollLeft() { horizontalAction = .LEFT }
+    func controlRollNone() { horizontalAction = .NONE }
     
-    func actionMoveStopHorizontal() {
-        removeActionForKey("horizontalMove")
+    func controlVFloat() { verticalAction = .FLOAT }
+    func controlVSink() { verticalAction = .SINK }
+    func controlVNone() { verticalAction = .NONE }
+    
+    
+    
+    
+    func update(currentTime: NSTimeInterval) {
+        /*
+            horizontalAction = whether to roll right, left or not roll
+            verticalAction = whether to try to float up, to sink down, or neither
+        */
+        
+        switch horizontalAction {
+        case .NONE: break
+        case .RIGHT: physicsBody?.applyForce(CGVectorMake(maxForceRoll, 0)); break
+        case .LEFT: physicsBody?.applyForce(CGVectorMake(-maxForceRoll, 0)); break
+        }
+        
+        switch verticalAction {
+        case .NONE: break
+        case .FLOAT: physicsBody?.applyForce(CGVectorMake(0, maxForceFloat)); break
+        case .SINK: physicsBody?.applyForce(CGVectorMake(0, -maxForceSink)); break
+        }
+        
+        // carrying bubbles causes an upward force!
+        physicsBody?.applyForce(CGVectorMake(0, CGFloat(bubbles)))
     }
 }
