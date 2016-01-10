@@ -9,6 +9,11 @@
 import Foundation
 
 
+
+
+
+
+
 func length(vec: CGVector) -> Double {
     return sqrt(Double(vec.dx*vec.dx + vec.dy*vec.dy))
 }
@@ -44,6 +49,16 @@ func *(left: Double, right: CGVector) -> CGVector {
 }
 
 
+infix operator • {}
+func •(left: CGVector, right: CGVector) -> Double {
+    return Double(left.dx*right.dx + left.dy*right.dy)
+}
+
+
+func crossProductZ(v1: CGVector, _ v2: CGVector) -> Double {
+    return Double(v1.dx*v2.dy - v1.dy*v2.dx)
+}
+
 
 func distance(x: CGPoint, _ y: CGPoint) -> Double {
     let dx = Double(x.x - y.x)
@@ -69,3 +84,10 @@ func randomPositionInWidth(width: CGFloat, height: CGFloat) -> CGPoint {
     
     return CGPointMake(x, y)
 }
+
+func randomVector(magnitude m: Double) -> CGVector {
+    let angle = randomDouble() * 2 * M_PI
+    
+    return CGVector(dx: m*cos(angle), dy: m*sin(angle))
+}
+
