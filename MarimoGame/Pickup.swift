@@ -9,11 +9,18 @@
 import SpriteKit
 
 
-class Pickup: SKSpriteNode {
-    init () {
-        super.init(texture: nil, color: NSColor(red: 0.2, green: 0, blue: 1, alpha: 1), size: CGSize(width: 10, height: 10))
+class Pickup: SKSpriteNode, ContactReceiver {
+    
+    let hasUpdate: Bool
+    let hasContact: Bool
+    
+    init(circleOfRadius r: CGFloat, hasUpdate up: Bool, hasContact cont: Bool) {
+        hasUpdate = up
+        hasContact = cont
         
-        physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
+        super.init(texture: nil, color: NSColor.whiteColor(), size: CGSize(width:r, height:r))
+        
+        physicsBody = SKPhysicsBody(circleOfRadius: r)
         physicsBody?.categoryBitMask = gCat_PICKUP
         physicsBody?.contactTestBitMask = gCat_PLAYER
         physicsBody?.affectedByGravity = false
@@ -23,5 +30,7 @@ class Pickup: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    func update(currentTime: CFTimeInterval) { }
+    func didBeginContact(withOther: SKNode) { }
+    func didEndContact(withOther: SKNode) { }
 }

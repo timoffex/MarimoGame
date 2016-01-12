@@ -21,6 +21,25 @@ var gPlayer: Player?
 var gCamera: Camera?
 
 
+
+/*
+    Note: Currently, this class does NOT use texture atlases. It could be greatly optimized.
+*/
 class Textures {
-    static var marimosAtlas: SKTextureAtlas = SKTextureAtlas(named: "marimos.atlas")
+    private static let textureMap: NSMutableDictionary = NSMutableDictionary()
+    
+    static func get(name: String) -> SKTexture? {
+        let val = textureMap[name]
+        
+        if val is SKTexture {
+            return val as! SKTexture?
+        } else {
+            let new = SKTexture(imageNamed: name)
+            
+            // texture will either exist or be a placeholder
+            textureMap[name] = new
+            
+            return new
+        }
+    }
 }

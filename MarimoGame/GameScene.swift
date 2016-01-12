@@ -16,10 +16,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var controls: ControlsHandler!
     
-    private var contactDelegate: PlayerPickupContactDelegate!
+    
+    
+    private var contactReceivers: [ContactReceiver]!
+    
+    
     
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */        
+        /* Setup your scene here */
+        
+        contactReceivers = []
+        
         gPlayer = Player()
         gCamera = Camera()
         
@@ -46,8 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         nextResponder = controls
         
-        contactDelegate = PlayerPickupContactDelegate()
-        physicsWorld.contactDelegate = contactDelegate
+        physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVectorMake(0, -0.05)
     }
     
@@ -61,13 +67,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func testInitPickups() {
         for _ in 0..<10 {
-            let p = Pickup()
+            let p = Bubble()
             p.name = "pickup"
             
             p.position = randomPositionInRect(CGRect(
                 x: self.frame.origin.x-self.frame.width/2,
                 y: self.frame.origin.y-self.frame.height/2,
                 width: self.frame.width, height: self.frame.height))
+            
+            if p.hasContact {
+                contactReceivers.append(p)
+            }
             
             layerMiddle.addChild(p)
         }
@@ -104,6 +114,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let cam = gCamera {
             let cpos = convertPoint(cam.position, fromNode: world)
             world.position = CGPointMake(world.position.x-cpos.x + size.width/2, world.position.y-cpos.y + size.height/2)
+        }
+    }
+    
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        let n1 = contact.bodyA.node!
+        let n2 = contact.bodyB.node!
+        
+        for receiver in contactReceivers {
+            if receiver === n1 {
+                receiver.didBeginContact(n2)
+            } else if receiver === n2 {
+                receiver.didBeginContact(n1)
+            }
+        }
+    }
+    
+    func didEndContact(contact: SKPhysicsContact) {
+        let n1 = contact.bodyA.node!
+        let n2 = contact.bodyB.node!
+        
+        for receiver in contactReceivers {
+            if receiver === n1 {
+                receiver.didEndContact(n2)
+            } else if receiver === n2 {
+                receiver.didEndContact(n1)
+            }
         }
     }
 }

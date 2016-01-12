@@ -22,9 +22,10 @@
 		C63400F21C3CFABA008FF185 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400EC1C3CFABA008FF185 /* Player.swift */; };
 		C63400F41C3CFB27008FF185 /* marimos.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C63400F31C3CFB27008FF185 /* marimos.atlas */; };
 		C63400F61C3D06E8008FF185 /* Pickup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400F51C3D06E8008FF185 /* Pickup.swift */; };
-		C63400F81C3F0C27008FF185 /* PlayerPickupContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400F71C3F0C27008FF185 /* PlayerPickupContactDelegate.swift */; };
 		C63400FA1C4229AB008FF185 /* Goldfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400F91C4229AB008FF185 /* Goldfish.swift */; };
 		C63400FC1C424851008FF185 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400FB1C424851008FF185 /* Ground.swift */; };
+		C63400FE1C444DBA008FF185 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400FD1C444DBA008FF185 /* Bubble.swift */; };
+		C672ECFE1C44ECE4007F70DF /* ContactReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +67,10 @@
 		C63400EC1C3CFABA008FF185 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C63400F31C3CFB27008FF185 /* marimos.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = marimos.atlas; sourceTree = "<group>"; };
 		C63400F51C3D06E8008FF185 /* Pickup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pickup.swift; sourceTree = "<group>"; };
-		C63400F71C3F0C27008FF185 /* PlayerPickupContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPickupContactDelegate.swift; sourceTree = "<group>"; };
 		C63400F91C4229AB008FF185 /* Goldfish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goldfish.swift; sourceTree = "<group>"; };
 		C63400FB1C424851008FF185 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		C63400FD1C444DBA008FF185 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +135,10 @@
 				C63400C21C3CF9CC008FF185 /* MainMenu.xib */,
 				C63400C51C3CF9CC008FF185 /* Info.plist */,
 				C63400F51C3D06E8008FF185 /* Pickup.swift */,
-				C63400F71C3F0C27008FF185 /* PlayerPickupContactDelegate.swift */,
 				C63400F91C4229AB008FF185 /* Goldfish.swift */,
 				C63400FB1C424851008FF185 /* Ground.swift */,
+				C63400FD1C444DBA008FF185 /* Bubble.swift */,
+				C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */,
 			);
 			path = MarimoGame;
 			sourceTree = "<group>";
@@ -292,9 +295,10 @@
 			files = (
 				C63400BD1C3CF9CC008FF185 /* GameScene.swift in Sources */,
 				C63400BB1C3CF9CC008FF185 /* AppDelegate.swift in Sources */,
+				C63400FE1C444DBA008FF185 /* Bubble.swift in Sources */,
 				C63400EE1C3CFABA008FF185 /* ControlsHandler.swift in Sources */,
+				C672ECFE1C44ECE4007F70DF /* ContactReceiver.swift in Sources */,
 				C63400F01C3CFABA008FF185 /* MathUtils.swift in Sources */,
-				C63400F81C3F0C27008FF185 /* PlayerPickupContactDelegate.swift in Sources */,
 				C63400F21C3CFABA008FF185 /* Player.swift in Sources */,
 				C63400FC1C424851008FF185 /* Ground.swift in Sources */,
 				C63400EF1C3CFABA008FF185 /* Globals.swift in Sources */,
@@ -525,6 +529,7 @@
 				C63400E01C3CF9CC008FF185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C63400E11C3CF9CC008FF185 /* Build configuration list for PBXNativeTarget "MarimoGameTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +538,7 @@
 				C63400E31C3CF9CC008FF185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C63400E41C3CF9CC008FF185 /* Build configuration list for PBXNativeTarget "MarimoGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +547,7 @@
 				C63400E61C3CF9CC008FF185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

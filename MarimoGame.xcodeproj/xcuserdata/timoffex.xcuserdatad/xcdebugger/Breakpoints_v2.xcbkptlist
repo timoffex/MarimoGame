@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarimoGame/PlayerPickupContactDelegate.swift"
-            timestampString = "474085805.913826"
+            timestampString = "474239656.025277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "didBeginContact(_:)"
             landmarkType = "5">
          </BreakpointContent>

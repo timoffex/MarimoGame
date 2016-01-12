@@ -24,7 +24,7 @@ class Player: SKSpriteNode {
     var bubbles: Double = 0
     
     init() {
-        let smiling = Textures.marimosAtlas.textureNamed("marimo_smiling")
+        let smiling = Textures.get("marimo_smiling")
         
         super.init(texture: smiling, color: NSColor(red: 0, green: 1, blue: 0, alpha: 1), size: CGSize(width: 50, height: 50))
         
