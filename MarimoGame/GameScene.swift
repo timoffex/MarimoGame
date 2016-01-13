@@ -19,6 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     private var contactReceivers: [ContactReceiver]!
+    private var updateReceivers: [UpdateReceiver]!
     
     
     
@@ -26,9 +27,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Setup your scene here */
         
         contactReceivers = []
+        updateReceivers = []
         
         gPlayer = Player()
         gCamera = Camera()
+        
+        updateReceivers.append(gPlayer!)
+        updateReceivers.append(gCamera!)
         
         controls = ControlsHandler(player: gPlayer!)
         
@@ -63,6 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         m.name = "monster"
         m.position = CGPointMake(300, 0)
         layerMiddle.addChild(m)
+        updateReceivers.append(m)
     }
     
     private func testInitPickups() {
@@ -77,6 +83,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if p.hasContact {
                 contactReceivers.append(p)
+            }
+            
+            if p.hasUpdate {
+                updateReceivers.append(p)
             }
             
             layerMiddle.addChild(p)
@@ -95,19 +105,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        // update all nodes marked "monster"
-        layerMiddle.enumerateChildNodesWithName("monster") { (c,stopPtr) in
-            (c as! Monster).update(currentTime)
-        }
+        // Updates Player, Camera, Monsters, etc.
+        updateReceivers.forEach { e in e.update(currentTime) }
         
-        // update player
-        gPlayer?.update(currentTime)
-        
-        // move camera
-        gCamera?.update(currentTime)
+        // Centers screen on camera
         centerOnCamera()
-        
-        
     }
     
     private func centerOnCamera() {

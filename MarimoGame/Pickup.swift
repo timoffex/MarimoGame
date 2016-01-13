@@ -9,7 +9,7 @@
 import SpriteKit
 
 
-class Pickup: SKSpriteNode, ContactReceiver {
+class Pickup: SKSpriteNode, ContactReceiver, UpdateReceiver {
     
     let hasUpdate: Bool
     let hasContact: Bool
@@ -22,8 +22,11 @@ class Pickup: SKSpriteNode, ContactReceiver {
         
         physicsBody = SKPhysicsBody(circleOfRadius: r)
         physicsBody?.categoryBitMask = gCat_PICKUP
-        physicsBody?.contactTestBitMask = gCat_PLAYER
         physicsBody?.affectedByGravity = false
+        
+        if hasContact {
+            physicsBody?.contactTestBitMask = gCat_PLAYER
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

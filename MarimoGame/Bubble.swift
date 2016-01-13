@@ -22,8 +22,6 @@ class Bubble: Pickup {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // I should allow an update() function to streamline AI coding
-    
     // override this method to detect contact with other Nodes
     override func didBeginContact(withOther: SKNode) {
         if withOther is Player {

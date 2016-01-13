@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Camera: SKNode {
+class Camera: SKNode, UpdateReceiver {
     func update(currentTime: NSTimeInterval) {
         if let player = gPlayer {
             let action = SKAction.moveTo(player.position, duration: 0.5)

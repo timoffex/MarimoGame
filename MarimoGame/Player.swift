@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class Player: SKSpriteNode {
+class Player: SKSpriteNode, UpdateReceiver {
     /* Player movement actions */
     
     private enum HorizontalMovement { case NONE, RIGHT, LEFT }

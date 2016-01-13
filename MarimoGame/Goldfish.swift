@@ -19,9 +19,10 @@ class Goldfish: Monster {
     private var idleAI: IdleAI!
     private var chaseAI: ChaseAI!
     
-    override init() {
+    init() {
+        super.init(width: 100, height: 50)
         
-        super.init(texture: nil, color: NSColor(red: 0.6, green: 0.4, blue: 0, alpha: 1), size: CGSize(width: 100, height: 50))
+        self.color = NSColor(red: 0.6, green: 0.4, blue: 0, alpha: 1)
         physicsBody!.mass = 1
         
         

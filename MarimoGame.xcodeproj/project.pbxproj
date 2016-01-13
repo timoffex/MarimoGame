@@ -26,6 +26,7 @@
 		C63400FC1C424851008FF185 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400FB1C424851008FF185 /* Ground.swift */; };
 		C63400FE1C444DBA008FF185 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63400FD1C444DBA008FF185 /* Bubble.swift */; };
 		C672ECFE1C44ECE4007F70DF /* ContactReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */; };
+		C672ED001C4634C3007F70DF /* UpdateReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C63400FB1C424851008FF185 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		C63400FD1C444DBA008FF185 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactReceiver.swift; sourceTree = "<group>"; };
+		C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				C63400FB1C424851008FF185 /* Ground.swift */,
 				C63400FD1C444DBA008FF185 /* Bubble.swift */,
 				C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */,
+				C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */,
 			);
 			path = MarimoGame;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				C63400FA1C4229AB008FF185 /* Goldfish.swift in Sources */,
 				C63400ED1C3CFABA008FF185 /* Camera.swift in Sources */,
 				C63400F11C3CFABA008FF185 /* Monster.swift in Sources */,
+				C672ED001C4634C3007F70DF /* UpdateReceiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
