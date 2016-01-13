@@ -72,8 +72,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private func testInitPickups() {
+        // Add bubbles!
         for _ in 0..<10 {
             let p = Bubble()
+            p.name = "pickup"
+            
+            p.position = randomPositionInRect(CGRect(
+                x: self.frame.origin.x-self.frame.width/2,
+                y: self.frame.origin.y-self.frame.height/2,
+                width: self.frame.width, height: self.frame.height))
+            
+            if p.hasContact {
+                contactReceivers.append(p)
+            }
+            
+            if p.hasUpdate {
+                updateReceivers.append(p)
+            }
+            
+            layerMiddle.addChild(p)
+        }
+        
+        // Add gems!
+        for _ in 0..<10 {
+            let p = Gem()
             p.name = "pickup"
             
             p.position = randomPositionInRect(CGRect(

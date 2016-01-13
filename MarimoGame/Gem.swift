@@ -16,6 +16,9 @@ class Gem: Pickup {
         
         // make all Gems detect contact with players
         self.physicsBody?.contactTestBitMask |= gCat_PLAYER
+        
+        // make Gems react to gravity
+        self.physicsBody?.affectedByGravity = true
     }
     
     required init?(coder aDecoder: NSCoder) {
