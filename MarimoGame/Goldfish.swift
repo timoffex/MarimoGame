@@ -20,9 +20,42 @@ class Goldfish: Monster {
     private var chaseAI: ChaseAI!
     
     init() {
-        super.init(width: 100, height: 50)
         
-        self.color = NSColor(red: 0.6, green: 0.4, blue: 0, alpha: 1)
+        // TODO: To make collisions more accurate, add a constructor to Monster
+        //      that lets you initialize a polygonal physicsBody (as opposed to rectangular).
+        super.init(width: 100, height: 100)
+        
+        
+        /*
+            Explanation of the following:
+            
+            self.runAction(<action>):
+                • Runs an SKAction object on this node.
+        
+                • SKActions are a way of specifying animations without manually coding their frame-by-frame behavior
+                    (so you don't have to implement an update() method and make your own texture-switching code, in this case)
+            
+            SKAction.repeatActionForever(<action>):
+                • Returns an action that repeats another action forever.
+                • Whenever its parameter finishes executing, it is restarted.
+                • Very useful for animations!
+            
+            SKAction.animateWithTextures(<SKTexture array>, timePerFrame: <time in seconds>):
+                • Returns an action that switches from texture to texture in order,
+                    displaying each texture for the specified amount of time.
+        
+            
+            This line of code runs a repeating action that switches between 3 textures,
+                essentially animating the goldfish!
+        
+        */
+        self.runAction(SKAction.repeatActionForever(
+            SKAction.animateWithTextures([
+                Textures.get("goldfish0.png"),
+                Textures.get("goldfish1.png"),
+                Textures.get("goldfish2.png")],
+                timePerFrame: 0.3)))
+        
         physicsBody!.mass = 1
         
         

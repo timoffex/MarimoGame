@@ -28,11 +28,11 @@ var gCamera: Camera?
 class Textures {
     private static let textureMap: NSMutableDictionary = NSMutableDictionary()
     
-    static func get(name: String) -> SKTexture? {
+    static func get(name: String) -> SKTexture {
         let val = textureMap[name]
         
         if val is SKTexture {
-            return val as! SKTexture?
+            return val as! SKTexture
         } else {
             let new = SKTexture(imageNamed: name)
             

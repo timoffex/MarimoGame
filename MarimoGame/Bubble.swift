@@ -1,5 +1,5 @@
 //
-//  Gem.swift
+//  Bubble.swift
 //  MarimoGame
 //
 //  Created by Tima Peshin on 1/11/16.
