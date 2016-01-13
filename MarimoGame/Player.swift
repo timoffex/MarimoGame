@@ -22,6 +22,7 @@ class Player: SKSpriteNode, UpdateReceiver {
     var maxForceSink: CGFloat = 80
     
     var bubbles: Double = 0
+    var gems: Double = 0
     
     init() {
         let smiling = Textures.get("marimo_smiling")

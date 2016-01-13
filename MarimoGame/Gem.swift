@@ -2,22 +2,22 @@
 //  Gem.swift
 //  MarimoGame
 //
-//  Created by Tima Peshin on 1/11/16.
+//  Created by Reshma Zachariah on 1/13/16.
 //  Copyright © 2016 timoffex. All rights reserved.
 //
 
 import SpriteKit
 
-class Bubble: Pickup {
+class Gem: Pickup {
     init() {
         // set size and texture
-        super.init(circleOfRadius: 45, hasUpdate: false, hasContact: true)
-        self.texture = Textures.get("bubble")
+        super.init(circleOfRadius: 25, hasUpdate: false, hasContact: true)
+        self.texture = Textures.get("gem1")
         
-        // make all Bubbles detect contact with players
+        // make all Gems detect contact with players
         self.physicsBody?.contactTestBitMask |= gCat_PLAYER
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -27,7 +27,7 @@ class Bubble: Pickup {
         if withOther is Player {
             let player = withOther as! Player
             
-            player.bubbles++
+            player.gems++
             self.removeFromParent()
         }
     }
