@@ -127,27 +127,23 @@
 		C63400B91C3CF9CB008FF185 /* MarimoGame */ = {
 			isa = PBXGroup;
 			children = (
+				C672ED041C476A53007F70DF /* Pickups */,
+				C672ED031C476A37007F70DF /* Monsters */,
+				C672ED051C476A7E007F70DF /* Utils */,
 				C63400F31C3CFB27008FF185 /* marimos.atlas */,
-				C63400E71C3CFABA008FF185 /* Camera.swift */,
-				C63400E81C3CFABA008FF185 /* ControlsHandler.swift */,
-				C63400E91C3CFABA008FF185 /* Globals.swift */,
-				C63400EA1C3CFABA008FF185 /* MathUtils.swift */,
-				C63400EB1C3CFABA008FF185 /* Monster.swift */,
-				C63400EC1C3CFABA008FF185 /* Player.swift */,
-				C63400BA1C3CF9CC008FF185 /* AppDelegate.swift */,
-				C63400BC1C3CF9CC008FF185 /* GameScene.swift */,
-				C63400BE1C3CF9CC008FF185 /* GameScene.sks */,
 				C63400C01C3CF9CC008FF185 /* Assets.xcassets */,
 				C63400C21C3CF9CC008FF185 /* MainMenu.xib */,
+				C63400BE1C3CF9CC008FF185 /* GameScene.sks */,
 				C63400C51C3CF9CC008FF185 /* Info.plist */,
-				C63400F51C3D06E8008FF185 /* Pickup.swift */,
-				C63400F91C4229AB008FF185 /* Goldfish.swift */,
+				C63400BA1C3CF9CC008FF185 /* AppDelegate.swift */,
+				C63400BC1C3CF9CC008FF185 /* GameScene.swift */,
+				C63400E71C3CFABA008FF185 /* Camera.swift */,
+				C63400E81C3CFABA008FF185 /* ControlsHandler.swift */,
+				C63400EC1C3CFABA008FF185 /* Player.swift */,
 				C63400FB1C424851008FF185 /* Ground.swift */,
-				C63400FD1C444DBA008FF185 /* Bubble.swift */,
-				F74CA63F1C4644AE005717E6 /* Gem.swift */,
+				C672ED011C475F60007F70DF /* Background.swift */,
 				C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */,
 				C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */,
-				C672ED011C475F60007F70DF /* Background.swift */,
 			);
 			path = MarimoGame;
 			sourceTree = "<group>";
@@ -168,6 +164,34 @@
 				C63400DB1C3CF9CC008FF185 /* Info.plist */,
 			);
 			path = MarimoGameUITests;
+			sourceTree = "<group>";
+		};
+		C672ED031C476A37007F70DF /* Monsters */ = {
+			isa = PBXGroup;
+			children = (
+				C63400EB1C3CFABA008FF185 /* Monster.swift */,
+				C63400F91C4229AB008FF185 /* Goldfish.swift */,
+			);
+			name = Monsters;
+			sourceTree = "<group>";
+		};
+		C672ED041C476A53007F70DF /* Pickups */ = {
+			isa = PBXGroup;
+			children = (
+				C63400F51C3D06E8008FF185 /* Pickup.swift */,
+				C63400FD1C444DBA008FF185 /* Bubble.swift */,
+				F74CA63F1C4644AE005717E6 /* Gem.swift */,
+			);
+			name = Pickups;
+			sourceTree = "<group>";
+		};
+		C672ED051C476A7E007F70DF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C63400E91C3CFABA008FF185 /* Globals.swift */,
+				C63400EA1C3CFABA008FF185 /* MathUtils.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
