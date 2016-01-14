@@ -56,7 +56,7 @@ class Goldfish: Monster {
                 Textures.get("goldfish2.png")],
                 timePerFrame: 0.3)))
         
-        physicsBody!.mass = 1
+        physicsBody!.density = 20
         
         
         idleAI = IdleAI(fish: self)
@@ -130,7 +130,7 @@ class Goldfish: Monster {
             
             // move in direction
             let dv = direction - fishParent.physicsBody!.velocity
-            fishParent.physicsBody?.applyImpulse(Double(fishParent.physicsBody!.mass) * dv)
+            fishParent.physicsBody?.applyForce(Double(fishParent.physicsBody!.mass) * dv)
         }
         
         func shouldSwitch() -> Bool {

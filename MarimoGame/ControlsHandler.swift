@@ -60,5 +60,9 @@ class ControlsHandler: NSResponder {
         if a { playerNode.controlRollLeft() }
         else if d { playerNode.controlRollRight() }
         else { playerNode.controlRollNone() }
+        
+        
+        let space = isKeyDown(" ")
+        if space { playerNode.controlSpecial() }
     }
 }

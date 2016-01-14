@@ -10,10 +10,6 @@ import Foundation
 
 
 
-
-
-
-
 func length(vec: CGVector) -> Double {
     return sqrt(Double(vec.dx*vec.dx + vec.dy*vec.dy))
 }

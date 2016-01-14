@@ -19,6 +19,7 @@ class Monster: SKSpriteNode, UpdateReceiver, ContactReceiver {
         physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: width, height: height))
         
         physicsBody?.categoryBitMask = gCat_MONSTER
+        physicsBody?.collisionBitMask = gCat_PLAYER | gCat_MONSTER | gCat_GROUND
     }
     
     override init(texture: SKTexture?, color: SKColor, size: CGSize) {

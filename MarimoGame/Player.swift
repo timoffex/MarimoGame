@@ -10,12 +10,6 @@ import Foundation
 import SpriteKit
 
 class Player: SKSpriteNode, UpdateReceiver {
-    /* Player movement actions */
-    
-    private enum HorizontalMovement { case NONE, RIGHT, LEFT }
-    private enum VerticalMovement { case NONE, FLOAT, SINK }
-    private var horizontalAction: HorizontalMovement = .NONE
-    private var verticalAction: VerticalMovement = .NONE
     
     var maxForceRoll: CGFloat = 100
     var maxForceFloat: CGFloat = 50
@@ -32,10 +26,10 @@ class Player: SKSpriteNode, UpdateReceiver {
         
         physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
         physicsBody?.categoryBitMask = gCat_PLAYER
-        physicsBody?.mass = 1
+        physicsBody?.density = 8
         physicsBody?.linearDamping = 0.8
         
-        physicsBody?.collisionBitMask &= ~gCat_PICKUP
+        physicsBody?.collisionBitMask = gCat_MONSTER | gCat_GROUND
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -44,34 +38,36 @@ class Player: SKSpriteNode, UpdateReceiver {
     
     
     
-    func controlRollRight() { horizontalAction = .RIGHT }
-    func controlRollLeft() { horizontalAction = .LEFT }
-    func controlRollNone() { horizontalAction = .NONE }
+    private func forceAction(dx: CGFloat, _ dy: CGFloat) -> SKAction {
+        return SKAction.customActionWithDuration(1) { (node, _) in
+            node.physicsBody!.applyForce(CGVectorMake(dx, dy))
+        }
+    }
     
-    func controlVFloat() { verticalAction = .FLOAT }
-    func controlVSink() { verticalAction = .SINK }
-    func controlVNone() { verticalAction = .NONE }
+    func controlRollRight() { runAction(forceAction(maxForceRoll, 0), withKey: "horizontal") }
+    func controlRollLeft() { runAction(forceAction(-maxForceRoll, 0), withKey: "horizontal") }
+    func controlRollNone() { removeActionForKey("horizontal") }
+    
+    func controlVFloat() { runAction(forceAction(0, maxForceFloat), withKey: "vertical") }
+    func controlVSink() { runAction(forceAction(0, -maxForceSink), withKey: "vertical") }
+    func controlVNone() { removeActionForKey("vertical") }
+    
+    func controlSpecial() {
+        let goldfish = scene!.childNodeWithName("//monster")!
+        
+        let action = SKAction.customActionWithDuration(4, actionBlock: { (node, elapsedTime) in
+                let delta = goldfish.position - self.position
+                let force = Double(self.physicsBody!.mass*1000) * delta/length(delta)
+                node.physicsBody!.applyForce(force)
+            })
+        
+        runAction(action, withKey: "custom")
+    }
     
     
     
     
     func update(currentTime: NSTimeInterval) {
-        /*
-            horizontalAction = whether to roll right, left or not roll
-            verticalAction = whether to try to float up, to sink down, or neither
-        */
-        
-        switch horizontalAction {
-        case .NONE: break
-        case .RIGHT: physicsBody?.applyForce(CGVectorMake(maxForceRoll, 0)); break
-        case .LEFT: physicsBody?.applyForce(CGVectorMake(-maxForceRoll, 0)); break
-        }
-        
-        switch verticalAction {
-        case .NONE: break
-        case .FLOAT: physicsBody?.applyForce(CGVectorMake(0, maxForceFloat)); break
-        case .SINK: physicsBody?.applyForce(CGVectorMake(0, -maxForceSink)); break
-        }
         
         // carrying bubbles causes an upward force!
         physicsBody?.applyForce(CGVectorMake(0, CGFloat(bubbles)))

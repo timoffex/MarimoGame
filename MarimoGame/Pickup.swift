@@ -27,6 +27,10 @@ class Pickup: SKSpriteNode, ContactReceiver, UpdateReceiver {
         if hasContact {
             physicsBody?.contactTestBitMask = gCat_PLAYER
         }
+        
+        
+        // pickups will by default only collide with ground
+        physicsBody?.collisionBitMask = gCat_GROUND
     }
 
     required init?(coder aDecoder: NSCoder) {

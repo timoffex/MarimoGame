@@ -14,6 +14,7 @@ import SpriteKit
 let gCat_PLAYER: UInt32 = 0x1 << 0
 let gCat_PICKUP: UInt32 = 0x1 << 1
 let gCat_MONSTER: UInt32 = 0x1 << 2
+let gCat_GROUND: UInt32 = 0x1 << 3
 /* END CATEGORIES */
 
 

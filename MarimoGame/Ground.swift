@@ -15,6 +15,7 @@ class Ground: SKSpriteNode {
         super.init(texture: nil, color: NSColor(red: 0.6, green: 0.4, blue: 0, alpha: 1), size: size)
         physicsBody = SKPhysicsBody(rectangleOfSize: size)
         physicsBody?.dynamic = false
+        physicsBody?.categoryBitMask = gCat_GROUND
     }
 
     required init?(coder aDecoder: NSCoder) {
