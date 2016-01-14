@@ -34,6 +34,8 @@ class Player: SKSpriteNode, UpdateReceiver {
         physicsBody?.categoryBitMask = gCat_PLAYER
         physicsBody?.mass = 1
         physicsBody?.linearDamping = 0.8
+        
+        physicsBody?.collisionBitMask &= ~gCat_PICKUP
     }
 
     required init?(coder aDecoder: NSCoder) {

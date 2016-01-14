@@ -11,7 +11,7 @@ import SpriteKit
 class Bubble: Pickup {
     init() {
         // set size and texture
-        super.init(circleOfRadius: 45, hasUpdate: false, hasContact: true)
+        super.init(circleOfRadius: 20, hasUpdate: false, hasContact: true)
         self.texture = Textures.get("bubble")
         
         // make all Bubbles detect contact with players

@@ -109,6 +109,8 @@ class Goldfish: Monster {
         }
         
         func update(currentTime: CFTimeInterval) {
+            fishParent.runAction(SKAction.fadeAlphaTo(0.0, duration: 5))
+            
             if currentTime > nextSwitch {
                 direction = randomVector(magnitude: fishParent.fishSpeed)
                 nextSwitch = currentTime + CFTimeInterval(randomDouble()*5)
@@ -150,6 +152,9 @@ class Goldfish: Monster {
         }
         
         func update(currentTime: CFTimeInterval) {
+            fishParent.runAction(SKAction.fadeAlphaTo(1.0, duration: 1))
+            
+            
             if currentTime - startTime > 2 {
                 willSwitchMode = true
             }

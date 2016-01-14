@@ -18,7 +18,7 @@ class Pickup: SKSpriteNode, ContactReceiver, UpdateReceiver {
         hasUpdate = up
         hasContact = cont
         
-        super.init(texture: nil, color: NSColor.whiteColor(), size: CGSize(width:r, height:r))
+        super.init(texture: nil, color: NSColor.whiteColor(), size: CGSize(width:2*r, height:2*r))
         
         physicsBody = SKPhysicsBody(circleOfRadius: r)
         physicsBody?.categoryBitMask = gCat_PICKUP
