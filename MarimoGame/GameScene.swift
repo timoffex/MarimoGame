@@ -53,6 +53,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         world.addChild(layerMiddle)
         world.addChild(gCamera!)
         
+        self.backgroundColor = NSColor(red: 0.3, green: 0.5, blue: 0.5, alpha: 1)
+        self.addChild(Background(size: self.frame))
         self.addChild(world)
         
         
