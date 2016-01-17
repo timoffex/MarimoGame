@@ -57,6 +57,7 @@ class Goldfish: Monster {
                 timePerFrame: 0.3)))
         
         physicsBody!.density = 20
+        physicsBody?.affectedByGravity = false
         
         
         idleAI = IdleAI(fish: self)

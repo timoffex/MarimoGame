@@ -28,6 +28,7 @@
 		C672ECFE1C44ECE4007F70DF /* ContactReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */; };
 		C672ED001C4634C3007F70DF /* UpdateReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */; };
 		C672ED021C475F60007F70DF /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ED011C475F60007F70DF /* Background.swift */; };
+		C672ED0A1C4B0098007F70DF /* BubbleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C672ED081C4B0098007F70DF /* BubbleParticle.sks */; };
 		F74CA6401C4644AE005717E6 /* Gem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CA63F1C4644AE005717E6 /* Gem.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactReceiver.swift; sourceTree = "<group>"; };
 		C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateReceiver.swift; sourceTree = "<group>"; };
 		C672ED011C475F60007F70DF /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		C672ED081C4B0098007F70DF /* BubbleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BubbleParticle.sks; sourceTree = "<group>"; };
 		F74CA63F1C4644AE005717E6 /* Gem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				C672ED011C475F60007F70DF /* Background.swift */,
 				C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */,
 				C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */,
+				C672ED081C4B0098007F70DF /* BubbleParticle.sks */,
 			);
 			path = MarimoGame;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C63400F41C3CFB27008FF185 /* marimos.atlas in Resources */,
+				C672ED0A1C4B0098007F70DF /* BubbleParticle.sks in Resources */,
 				C63400C11C3CF9CC008FF185 /* Assets.xcassets in Resources */,
 				C63400BF1C3CF9CC008FF185 /* GameScene.sks in Resources */,
 				C63400C41C3CF9CC008FF185 /* MainMenu.xib in Resources */,

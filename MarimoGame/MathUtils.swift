@@ -45,6 +45,12 @@ func *(left: Double, right: CGVector) -> CGVector {
 }
 
 
+func *=(inout left: CGVector, right: CGFloat) {
+    left.dx *= right
+    left.dy *= right
+}
+
+
 infix operator • {}
 func •(left: CGVector, right: CGVector) -> Double {
     return Double(left.dx*right.dx + left.dy*right.dy)

@@ -26,19 +26,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
+        
+        layerMiddle = SKNode()
+        world = SKNode()
+        
         contactReceivers = []
         updateReceivers = []
         
-        gPlayer = Player()
+        gPlayer = Player(world: world)
         gCamera = Camera()
         
         updateReceivers.append(gPlayer!)
         updateReceivers.append(gCamera!)
         
+        contactReceivers.append(gPlayer!)
+        
         controls = ControlsHandler(player: gPlayer!)
         
-        layerMiddle = SKNode()
-        world = SKNode()
         
         
         
@@ -61,7 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         nextResponder = controls
         
         physicsWorld.contactDelegate = self
-        physicsWorld.gravity = CGVectorMake(0, -0.05)
+        physicsWorld.gravity = CGVectorMake(0, -0.8)
     }
     
     

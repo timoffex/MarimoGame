@@ -30,8 +30,6 @@ class Gem: Pickup {
         if withOther is Player {
             let player = withOther as! Player
             
-            
-            player.runAction(SKAction.scaleBy(1.2, duration: 1))
             player.gems++
             self.removeFromParent()
         }
