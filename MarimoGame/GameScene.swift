@@ -100,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         // Add gems!
-        for _ in 0..<10 {
+        for i in 0..<10 {
             let p = Gem()
             p.name = "pickup"
             
@@ -118,6 +118,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             layerMiddle.addChild(p)
+            
+            
+            if i == 9 {
+                let emitter = SKEmitterNode(fileNamed: "MyParticle")!
+                emitter.targetNode = world
+                p.addChild(emitter)
+            }
         }
     }
     

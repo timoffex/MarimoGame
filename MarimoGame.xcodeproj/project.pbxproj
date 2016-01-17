@@ -29,6 +29,8 @@
 		C672ED001C4634C3007F70DF /* UpdateReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */; };
 		C672ED021C475F60007F70DF /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672ED011C475F60007F70DF /* Background.swift */; };
 		C672ED0A1C4B0098007F70DF /* BubbleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C672ED081C4B0098007F70DF /* BubbleParticle.sks */; };
+		C672ED0E1C4B71FF007F70DF /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = C672ED0C1C4B71FF007F70DF /* MyParticle.sks */; };
+		C672ED0F1C4B71FF007F70DF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = C672ED0D1C4B71FF007F70DF /* spark.png */; };
 		F74CA6401C4644AE005717E6 /* Gem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CA63F1C4644AE005717E6 /* Gem.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateReceiver.swift; sourceTree = "<group>"; };
 		C672ED011C475F60007F70DF /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		C672ED081C4B0098007F70DF /* BubbleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BubbleParticle.sks; sourceTree = "<group>"; };
+		C672ED0C1C4B71FF007F70DF /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyParticle.sks; path = ../MyParticle.sks; sourceTree = "<group>"; };
+		C672ED0D1C4B71FF007F70DF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 		F74CA63F1C4644AE005717E6 /* Gem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,8 @@
 				C672ECFD1C44ECE4007F70DF /* ContactReceiver.swift */,
 				C672ECFF1C4634C3007F70DF /* UpdateReceiver.swift */,
 				C672ED081C4B0098007F70DF /* BubbleParticle.sks */,
+				C672ED0C1C4B71FF007F70DF /* MyParticle.sks */,
+				C672ED0D1C4B71FF007F70DF /* spark.png */,
 			);
 			path = MarimoGame;
 			sourceTree = "<group>";
@@ -302,7 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C63400F41C3CFB27008FF185 /* marimos.atlas in Resources */,
+				C672ED0E1C4B71FF007F70DF /* MyParticle.sks in Resources */,
 				C672ED0A1C4B0098007F70DF /* BubbleParticle.sks in Resources */,
+				C672ED0F1C4B71FF007F70DF /* spark.png in Resources */,
 				C63400C11C3CF9CC008FF185 /* Assets.xcassets in Resources */,
 				C63400BF1C3CF9CC008FF185 /* GameScene.sks in Resources */,
 				C63400C41C3CF9CC008FF185 /* MainMenu.xib in Resources */,
